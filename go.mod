@@ -1,4 +1,4 @@
-module google.golang.org/appengine
+module github.com/sivamforeverd/appengine
 
 go 1.11
 
@@ -8,4 +8,3 @@ require (
 	golang.org/x/text v0.3.2
 )
 
-replace google.golang.org/appengine v1.6.7 => github.com/sivamforeverd/appengine v1.6.7
