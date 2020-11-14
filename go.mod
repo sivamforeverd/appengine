@@ -7,3 +7,5 @@ require (
 	golang.org/x/net v0.0.0-20190603091049-60506f45cf65
 	golang.org/x/text v0.3.2
 )
+
+replace google.golang.org/appengine v1.6.7 => github.com/sivamforeverd/appengine v1.6.7
