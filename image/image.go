@@ -13,7 +13,7 @@ import (
 
 	"google.golang.org/appengine"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	pb "google.golang.org/appengine/internal/image"
+	pb "github.com/sivamforeverd/appengine/pocinternal/image"
 )
 
 type ServingURLOptions struct {

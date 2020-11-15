@@ -14,8 +14,8 @@ import (
 
 	"google.golang.org/appengine"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	"google.golang.org/appengine/internal/aetesting"
-	pb "google.golang.org/appengine/internal/taskqueue"
+	"github.com/sivamforeverd/appengine/pocinternal/aetesting"
+	pb "github.com/sivamforeverd/appengine/pocinternal/taskqueue"
 )
 
 func TestAddErrors(t *testing.T) {

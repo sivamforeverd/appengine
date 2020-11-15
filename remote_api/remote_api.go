@@ -19,7 +19,7 @@ import (
 
 	"google.golang.org/appengine"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	pb "google.golang.org/appengine/internal/remote_api"
+	pb "github.com/sivamforeverd/appengine/pocinternal/remote_api"
 	"google.golang.org/appengine/log"
 	"google.golang.org/appengine/user"
 )

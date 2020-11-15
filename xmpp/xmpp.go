@@ -33,7 +33,7 @@ import (
 
 	"google.golang.org/appengine"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	pb "google.golang.org/appengine/internal/xmpp"
+	pb "github.com/sivamforeverd/appengine/pocinternal/xmpp"
 )
 
 // Message represents an incoming chat message.

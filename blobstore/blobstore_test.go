@@ -21,9 +21,9 @@ import (
 	"golang.org/x/text/encoding/htmlindex"
 
 	"google.golang.org/appengine"
-	"google.golang.org/appengine/internal/aetesting"
+	"github.com/sivamforeverd/appengine/pocinternal/aetesting"
 
-	pb "google.golang.org/appengine/internal/blobstore"
+	pb "github.com/sivamforeverd/appengine/pocinternal/blobstore"
 )
 
 const rbs = readBufferSize

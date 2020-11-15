@@ -31,8 +31,8 @@ import (
 
 	"google.golang.org/appengine"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	basepb "google.golang.org/appengine/internal/base"
-	pb "google.golang.org/appengine/internal/channel"
+	basepb "github.com/sivamforeverd/appengine/pocinternal/base"
+	pb "github.com/sivamforeverd/appengine/pocinternal/channel"
 )
 
 // Create creates a channel and returns a token for use by the client.

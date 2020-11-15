@@ -15,8 +15,8 @@ import (
 	"github.com/golang/protobuf/proto"
 
 	"google.golang.org/appengine"
-	"google.golang.org/appengine/internal/aetesting"
-	pb "google.golang.org/appengine/internal/search"
+	"github.com/sivamforeverd/appengine/pocinternal/aetesting"
+	pb "github.com/sivamforeverd/appengine/pocinternal/search"
 )
 
 type TestDoc struct {

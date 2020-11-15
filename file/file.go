@@ -11,7 +11,7 @@ import (
 	"golang.org/x/net/context"
 
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	aipb "google.golang.org/appengine/internal/app_identity"
+	aipb "github.com/sivamforeverd/appengine/pocinternal/app_identity"
 )
 
 // DefaultBucketName returns the name of this application's

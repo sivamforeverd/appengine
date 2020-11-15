@@ -17,7 +17,7 @@ import (
 	"golang.org/x/net/context"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
 
-	pb "google.golang.org/appengine/internal/socket"
+	pb "github.com/sivamforeverd/appengine/pocinternal/socket"
 )
 
 // Dial connects to the address addr on the network protocol.

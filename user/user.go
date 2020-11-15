@@ -12,7 +12,7 @@ import (
 	"golang.org/x/net/context"
 
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	pb "google.golang.org/appengine/internal/user"
+	pb "github.com/sivamforeverd/appengine/pocinternal/user"
 )
 
 // User represents a user of the application.

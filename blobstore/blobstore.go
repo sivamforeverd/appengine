@@ -30,8 +30,8 @@ import (
 	"google.golang.org/appengine/datastore"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
 
-	basepb "google.golang.org/appengine/internal/base"
-	blobpb "google.golang.org/appengine/internal/blobstore"
+	basepb "github.com/sivamforeverd/appengine/pocinternal/base"
+	blobpb "github.com/sivamforeverd/appengine/pocinternal/blobstore"
 )
 
 const (

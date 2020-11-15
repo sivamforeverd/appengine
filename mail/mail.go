@@ -26,8 +26,8 @@ import (
 	"golang.org/x/net/context"
 
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	bpb "google.golang.org/appengine/internal/base"
-	pb "google.golang.org/appengine/internal/mail"
+	bpb "github.com/sivamforeverd/appengine/pocinternal/base"
+	pb "github.com/sivamforeverd/appengine/pocinternal/mail"
 )
 
 // A Message represents an email message.

@@ -2621,7 +2621,7 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("google.golang.org/appengine/internal/socket/socket_service.proto", fileDescriptor_socket_service_b5f8f233dc327808)
+	proto.RegisterFile("github.com/sivamforeverd/appengine/pocinternal/socket/socket_service.proto", fileDescriptor_socket_service_b5f8f233dc327808)
 }
 
 var fileDescriptor_socket_service_b5f8f233dc327808 = []byte{

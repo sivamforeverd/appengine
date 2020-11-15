@@ -17,7 +17,7 @@ import (
 	"google.golang.org/appengine"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
 
-	blobpb "google.golang.org/appengine/internal/blobstore"
+	blobpb "github.com/sivamforeverd/appengine/pocinternal/blobstore"
 )
 
 // openBlob returns a reader for a blob. It always succeeds; if the blob does

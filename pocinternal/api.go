@@ -26,9 +26,9 @@ import (
 	"github.com/golang/protobuf/proto"
 	netcontext "golang.org/x/net/context"
 
-	basepb "google.golang.org/appengine/internal/base"
-	logpb "google.golang.org/appengine/internal/log"
-	remotepb "google.golang.org/appengine/internal/remote_api"
+	basepb "github.com/sivamforeverd/appengine/pocinternal/base"
+	logpb "github.com/sivamforeverd/appengine/pocinternal/log"
+	remotepb "github.com/sivamforeverd/appengine/pocinternal/remote_api"
 )
 
 const (

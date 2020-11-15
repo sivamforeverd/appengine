@@ -25,8 +25,8 @@ import (
 	"github.com/golang/protobuf/proto"
 	netcontext "golang.org/x/net/context"
 
-	basepb "google.golang.org/appengine/internal/base"
-	remotepb "google.golang.org/appengine/internal/remote_api"
+	basepb "github.com/sivamforeverd/appengine/pocinternal/base"
+	remotepb "github.com/sivamforeverd/appengine/pocinternal/remote_api"
 )
 
 const testTicketHeader = "X-Magic-Ticket-Header"

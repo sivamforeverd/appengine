@@ -17,7 +17,7 @@ import (
 
 	"google.golang.org/appengine"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	pb "google.golang.org/appengine/internal/system"
+	pb "github.com/sivamforeverd/appengine/pocinternal/system"
 )
 
 // Statistics represents the system's statistics.

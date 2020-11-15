@@ -24,7 +24,7 @@ import (
 	"golang.org/x/net/context"
 
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	pb "google.golang.org/appengine/internal/remote_api"
+	pb "github.com/sivamforeverd/appengine/pocinternal/remote_api"
 )
 
 // Client is a connection to the production APIs for an application.

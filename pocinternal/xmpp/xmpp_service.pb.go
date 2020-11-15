@@ -675,7 +675,7 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("google.golang.org/appengine/internal/xmpp/xmpp_service.proto", fileDescriptor_xmpp_service_628da92437bed65f)
+	proto.RegisterFile("github.com/sivamforeverd/appengine/pocinternal/xmpp/xmpp_service.proto", fileDescriptor_xmpp_service_628da92437bed65f)
 }
 
 var fileDescriptor_xmpp_service_628da92437bed65f = []byte{

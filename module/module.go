@@ -15,7 +15,7 @@ import (
 	"golang.org/x/net/context"
 
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	pb "google.golang.org/appengine/internal/modules"
+	pb "github.com/sivamforeverd/appengine/pocinternal/modules"
 )
 
 // List returns the names of modules belonging to this application.

@@ -29,8 +29,8 @@ import (
 
 	"google.golang.org/appengine"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	dspb "google.golang.org/appengine/internal/datastore"
-	pb "google.golang.org/appengine/internal/taskqueue"
+	dspb "github.com/sivamforeverd/appengine/pocinternal/datastore"
+	pb "github.com/sivamforeverd/appengine/pocinternal/taskqueue"
 )
 
 var (

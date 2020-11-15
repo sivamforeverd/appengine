@@ -12,7 +12,7 @@ import (
 
 	"github.com/golang/protobuf/proto"
 	"google.golang.org/appengine"
-	pb "google.golang.org/appengine/internal/datastore"
+	pb "github.com/sivamforeverd/appengine/pocinternal/datastore"
 )
 
 var (

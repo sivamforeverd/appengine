@@ -487,7 +487,7 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("google.golang.org/appengine/internal/user/user_service.proto", fileDescriptor_user_service_faa685423dd20b0a)
+	proto.RegisterFile("github.com/sivamforeverd/appengine/pocinternal/user/user_service.proto", fileDescriptor_user_service_faa685423dd20b0a)
 }
 
 var fileDescriptor_user_service_faa685423dd20b0a = []byte{

@@ -21,7 +21,7 @@ import (
 	internal "github.com/sivamforeverd/appengine/pocinternal"
 	"google.golang.org/appengine/log"
 
-	pb "google.golang.org/appengine/internal/capability"
+	pb "github.com/sivamforeverd/appengine/pocinternal/capability"
 )
 
 // Enabled returns whether an API's capabilities are enabled.

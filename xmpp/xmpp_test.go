@@ -12,8 +12,8 @@ import (
 	"github.com/golang/protobuf/proto"
 
 	"google.golang.org/appengine"
-	"google.golang.org/appengine/internal/aetesting"
-	pb "google.golang.org/appengine/internal/xmpp"
+	"github.com/sivamforeverd/appengine/pocinternal/aetesting"
+	pb "github.com/sivamforeverd/appengine/pocinternal/xmpp"
 )
 
 func newPresenceResponse(isAvailable bool, presence pb.PresenceResponse_SHOW, valid bool) *pb.PresenceResponse {

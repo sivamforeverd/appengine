@@ -3263,7 +3263,7 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("google.golang.org/appengine/internal/search/search.proto", fileDescriptor_search_78ae5a87590ff3d8)
+	proto.RegisterFile("github.com/sivamforeverd/appengine/pocinternal/search/search.proto", fileDescriptor_search_78ae5a87590ff3d8)
 }
 
 var fileDescriptor_search_78ae5a87590ff3d8 = []byte{

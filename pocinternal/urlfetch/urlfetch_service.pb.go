@@ -470,7 +470,7 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("google.golang.org/appengine/internal/urlfetch/urlfetch_service.proto", fileDescriptor_urlfetch_service_b245a7065f33bced)
+	proto.RegisterFile("github.com/sivamforeverd/appengine/pocinternal/urlfetch/urlfetch_service.proto", fileDescriptor_urlfetch_service_b245a7065f33bced)
 }
 
 var fileDescriptor_urlfetch_service_b245a7065f33bced = []byte{

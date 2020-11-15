@@ -242,7 +242,7 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("google.golang.org/appengine/internal/channel/channel_service.proto", fileDescriptor_channel_service_a8d15e05b34664a9)
+	proto.RegisterFile("github.com/sivamforeverd/appengine/pocinternal/channel/channel_service.proto", fileDescriptor_channel_service_a8d15e05b34664a9)
 }
 
 var fileDescriptor_channel_service_a8d15e05b34664a9 = []byte{

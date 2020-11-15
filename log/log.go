@@ -39,7 +39,7 @@ import (
 
 	"google.golang.org/appengine"
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	pb "google.golang.org/appengine/internal/log"
+	pb "github.com/sivamforeverd/appengine/pocinternal/log"
 )
 
 // Query defines a logs query.

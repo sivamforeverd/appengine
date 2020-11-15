@@ -611,7 +611,7 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("google.golang.org/appengine/internal/blobstore/blobstore_service.proto", fileDescriptor_blobstore_service_3604fb6033ea2e2e)
+	proto.RegisterFile("github.com/sivamforeverd/appengine/pocinternal/blobstore/blobstore_service.proto", fileDescriptor_blobstore_service_3604fb6033ea2e2e)
 }
 
 var fileDescriptor_blobstore_service_3604fb6033ea2e2e = []byte{

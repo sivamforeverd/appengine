@@ -21,7 +21,7 @@ import (
 	"golang.org/x/net/context"
 
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	pb "google.golang.org/appengine/internal/urlfetch"
+	pb "github.com/sivamforeverd/appengine/pocinternal/urlfetch"
 )
 
 // Transport is an implementation of http.RoundTripper for

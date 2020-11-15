@@ -17,7 +17,7 @@ import (
 	"golang.org/x/net/context"
 
 	internal "github.com/sivamforeverd/appengine/pocinternal"
-	pb "google.golang.org/appengine/internal/datastore"
+	pb "github.com/sivamforeverd/appengine/pocinternal/datastore"
 )
 
 type KeyRangeCollisionError struct {

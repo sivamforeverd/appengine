@@ -11,7 +11,7 @@ import (
 
 	"github.com/golang/protobuf/proto"
 
-	pb "google.golang.org/appengine/internal/log"
+	pb "github.com/sivamforeverd/appengine/pocinternal/log"
 )
 
 func TestQueryToRequest(t *testing.T) {
