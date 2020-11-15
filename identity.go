@@ -9,9 +9,9 @@ import (
 
 	"golang.org/x/net/context"
 
-	"google.golang.org/appengine/internal"
-	pb "google.golang.org/appengine/internal/app_identity"
-	modpb "google.golang.org/appengine/internal/modules"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
+	pb "github.com/sivamforeverd/appengine/pocinternal/app_identity"
+	modpb "github.com/sivamforeverd/appengine/pocinternal/modules"
 )
 
 // AppID returns the application ID for the current application.

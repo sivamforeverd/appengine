@@ -24,9 +24,9 @@ import (
 	"github.com/golang/protobuf/proto"
 	"golang.org/x/net/context"
 
+	internal "github.com/sivamforeverd/appengine/pocinternal"
+	pb "github.com/sivamforeverd/appengine/pocinternal/search"
 	"google.golang.org/appengine"
-	"google.golang.org/appengine/internal"
-	pb "google.golang.org/appengine/internal/search"
 )
 
 const maxDocumentsPerPutDelete = 200
