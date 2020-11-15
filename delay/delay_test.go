@@ -20,7 +20,7 @@ import (
 	"github.com/golang/protobuf/proto"
 	"golang.org/x/net/context"
 
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 	"google.golang.org/appengine/taskqueue"
 )
 

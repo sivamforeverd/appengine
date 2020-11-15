@@ -18,7 +18,7 @@ import (
 	"time"
 
 	"golang.org/x/net/context"
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 )
 
 // NewInstance launches a running instance of api_server.py which can be used

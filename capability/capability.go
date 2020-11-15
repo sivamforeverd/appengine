@@ -18,7 +18,7 @@ package capability // import "google.golang.org/appengine/capability"
 import (
 	"golang.org/x/net/context"
 
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 	"google.golang.org/appengine/log"
 
 	pb "google.golang.org/appengine/internal/capability"

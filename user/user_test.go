@@ -13,7 +13,7 @@ import (
 
 	"github.com/golang/protobuf/proto"
 
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 	"google.golang.org/appengine/internal/aetesting"
 	pb "google.golang.org/appengine/internal/user"
 )

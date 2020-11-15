@@ -70,7 +70,7 @@ import (
 	"golang.org/x/net/context"
 
 	"google.golang.org/appengine"
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 	"google.golang.org/appengine/log"
 	"google.golang.org/appengine/taskqueue"
 )

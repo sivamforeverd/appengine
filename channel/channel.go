@@ -30,7 +30,7 @@ import (
 	"golang.org/x/net/context"
 
 	"google.golang.org/appengine"
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 	basepb "google.golang.org/appengine/internal/base"
 	pb "google.golang.org/appengine/internal/channel"
 )

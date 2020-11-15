@@ -18,7 +18,7 @@ import (
 	"github.com/golang/protobuf/proto"
 
 	"google.golang.org/appengine"
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 	pb "google.golang.org/appengine/internal/remote_api"
 	"google.golang.org/appengine/log"
 	"google.golang.org/appengine/user"

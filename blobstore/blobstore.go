@@ -28,7 +28,7 @@ import (
 
 	"google.golang.org/appengine"
 	"google.golang.org/appengine/datastore"
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 
 	basepb "google.golang.org/appengine/internal/base"
 	blobpb "google.golang.org/appengine/internal/blobstore"

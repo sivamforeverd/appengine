@@ -10,7 +10,7 @@ import (
 	"golang.org/x/net/context"
 
 	"google.golang.org/appengine/datastore/internal/cloudkey"
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 )
 
 var keyConversion struct {

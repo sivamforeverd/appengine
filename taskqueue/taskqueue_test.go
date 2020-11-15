@@ -13,7 +13,7 @@ import (
 	"time"
 
 	"google.golang.org/appengine"
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 	"google.golang.org/appengine/internal/aetesting"
 	pb "google.golang.org/appengine/internal/taskqueue"
 )

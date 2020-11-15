@@ -9,7 +9,7 @@ package appengine
 import (
 	"golang.org/x/net/context"
 
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 )
 
 // BackgroundContext returns a context not associated with a request.

@@ -9,7 +9,7 @@ package user
 import (
 	"golang.org/x/net/context"
 
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 )
 
 // Current returns the currently logged-in user,

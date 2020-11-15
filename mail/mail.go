@@ -25,7 +25,7 @@ import (
 	"github.com/golang/protobuf/proto"
 	"golang.org/x/net/context"
 
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 	bpb "google.golang.org/appengine/internal/base"
 	pb "google.golang.org/appengine/internal/mail"
 )

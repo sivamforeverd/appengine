@@ -11,7 +11,7 @@ import (
 
 	"golang.org/x/net/context"
 
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 )
 
 func Current(ctx context.Context) *User {

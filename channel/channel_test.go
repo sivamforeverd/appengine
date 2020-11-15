@@ -7,7 +7,7 @@ package channel
 import (
 	"testing"
 
-	"google.golang.org/appengine/internal"
+	internal "github.com/sivamforeverd/appengine/pocinternal"
 )
 
 func TestRemapError(t *testing.T) {
