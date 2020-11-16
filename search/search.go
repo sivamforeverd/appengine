@@ -133,6 +133,14 @@ func (x *Index) Put(c context.Context, id string, src interface{}) (string, erro
 	return ids[0], nil
 }
 
+func (x *Index) PutRAW(c context.Context, id string, src interface{}) (response *pb.IndexDocumentResponse, err error) {
+	res, err := x.PutMultiRAW(c, []string{id}, []interface{}{src})
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
 // PutMulti is like Put, but is more efficient for adding multiple documents to
 // the index at once.
 //
@@ -200,6 +208,61 @@ func (x *Index) PutMulti(c context.Context, ids []string, srcs []interface{}) ([
 	return res.DocId, nil
 }
 
+func (x *Index) PutMultiRAW(c context.Context, ids []string, srcs []interface{}) (response *pb.IndexDocumentResponse, err error) {
+	if len(ids) != 0 && len(srcs) != len(ids) {
+		return nil, fmt.Errorf("search: PutMulti expects ids and srcs slices of the same length")
+	}
+	if len(srcs) > maxDocumentsPerPutDelete {
+		return nil, ErrTooManyDocuments
+	}
+
+	docs := make([]*pb.Document, len(srcs))
+	for i, s := range srcs {
+		var err error
+		docs[i], err = saveDoc(s)
+		if err != nil {
+			return nil, err
+		}
+
+		if len(ids) != 0 && ids[i] != "" {
+			if !validIndexNameOrDocID(ids[i]) {
+				return nil, fmt.Errorf("search: invalid ID %q", ids[i])
+			}
+			docs[i].Id = proto.String(ids[i])
+		}
+	}
+
+	// spec is modified by Call when applying the current Namespace, so copy it to
+	// avoid retaining the namespace beyond the scope of the Call.
+	spec := x.spec
+	req := &pb.IndexDocumentRequest{
+		Params: &pb.IndexDocumentParams{
+			Document:  docs,
+			IndexSpec: &spec,
+		},
+	}
+	res := &pb.IndexDocumentResponse{}
+	if err := internal.Call(c, "search", "IndexDocument", req, res); err != nil {
+		return nil, err
+	}
+	multiErr, hasErr := make(appengine.MultiError, len(res.Status)), false
+	for i, s := range res.Status {
+		if s.GetCode() != pb.SearchServiceError_OK {
+			multiErr[i] = fmt.Errorf("search: %s: %s", s.GetCode(), s.GetErrorDetail())
+			hasErr = true
+		}
+	}
+	if hasErr {
+		return res, multiErr
+	}
+
+	if len(res.Status) != len(docs) || len(res.DocId) != len(docs) {
+		return nil, fmt.Errorf("search: internal error: wrong number of results (%d Statuses, %d DocIDs, expected %d)",
+			len(res.Status), len(res.DocId), len(docs))
+	}
+	return res, nil
+}
+
 // Get loads the document with the given ID into dst.
 //
 // The ID is a human-readable ASCII string. It must be non-empty, contain no
@@ -237,9 +300,72 @@ func (x *Index) Get(c context.Context, id string, dst interface{}) error {
 	return loadDoc(dst, res.Document[0], nil)
 }
 
+// GetRaw returns the direct response from AES search
+func (x *Index) GetRaw(c context.Context, id string) (responseDocument *pb.ListDocumentsResponse, err error) {
+	if id == "" || !validIndexNameOrDocID(id) {
+		return nil, fmt.Errorf("search: invalid ID %q", id)
+	}
+	req := &pb.ListDocumentsRequest{
+		Params: &pb.ListDocumentsParams{
+			IndexSpec:  &x.spec,
+			StartDocId: proto.String(id),
+			Limit:      proto.Int32(1),
+		},
+	}
+	res := &pb.ListDocumentsResponse{}
+	if err := internal.Call(c, "search", "ListDocuments", req, res); err != nil {
+		return nil, err
+	}
+	if res.Status == nil || res.Status.GetCode() != pb.SearchServiceError_OK {
+		return nil, fmt.Errorf("search: %s: %s", res.Status.GetCode(), res.Status.GetErrorDetail())
+	}
+	if len(res.Document) != 1 || res.Document[0].GetId() != id {
+		return nil, ErrNoSuchDocument
+	}
+	return res, nil
+}
+
 // Delete deletes a document from the index.
 func (x *Index) Delete(c context.Context, id string) error {
 	return x.DeleteMulti(c, []string{id})
+}
+
+//DeleteRaw deletes a document from the index and returns the raw resonse
+func (x *Index) DeleteRaw(c context.Context, id string) (response *pb.DeleteDocumentResponse, err error) {
+	return x.DeleteMultiRaw(c, []string{id})
+}
+
+//DeleteMultiRaw deletes multiple documents from the index and returns the raw resonse
+func (x *Index) DeleteMultiRaw(c context.Context, ids []string) (response *pb.DeleteDocumentResponse, err error) {
+	if len(ids) > maxDocumentsPerPutDelete {
+		return nil, ErrTooManyDocuments
+	}
+
+	req := &pb.DeleteDocumentRequest{
+		Params: &pb.DeleteDocumentParams{
+			DocId:     ids,
+			IndexSpec: &x.spec,
+		},
+	}
+	res := &pb.DeleteDocumentResponse{}
+	if err := internal.Call(c, "search", "DeleteDocument", req, res); err != nil {
+		return nil, err
+	}
+	if len(res.Status) != len(ids) {
+		return nil, fmt.Errorf("search: internal error: wrong number of results (%d, expected %d)",
+			len(res.Status), len(ids))
+	}
+	multiErr, hasErr := make(appengine.MultiError, len(ids)), false
+	for i, s := range res.Status {
+		if s.GetCode() != pb.SearchServiceError_OK {
+			multiErr[i] = fmt.Errorf("search: %s: %s", s.GetCode(), s.GetErrorDetail())
+			hasErr = true
+		}
+	}
+	if hasErr {
+		return nil, multiErr
+	}
+	return res, nil
 }
 
 // DeleteMulti deletes multiple documents from the index.
